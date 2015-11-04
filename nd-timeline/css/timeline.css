@@ -1,0 +1,334 @@
+/* 
+    TIMELINE STYLES
+    Created    :10/13/15
+    Author     :ac
+*/
+/* MIXINS */
+/* MAIN -----*/
+/* line 16, ../assets/scss/timeline.scss */
+.tl {
+  background: #eee;
+  padding: 20px 10px;
+  text-align: center;
+  overflow-x: visible;
+  overflow-y: hidden;
+  position: relative;
+  width: 100%;
+  /* NAV -----*/
+  /* BUTTONS -----*/
+  /* TIMELINE -----*/
+}
+/* line 17, ../assets/scss/timeline.scss */
+.tl .desc {
+  font-size: 16px;
+  max-width: 1000px;
+  margin: 10px auto;
+  line-height: 1.8em;
+}
+/* line 18, ../assets/scss/timeline.scss */
+.tl .title {
+  text-transform: uppercase;
+  font-size: 60px;
+  line-height: 58px;
+  margin: 15px 0 10px;
+}
+/* line 19, ../assets/scss/timeline.scss */
+.tl .title span {
+  font-size: 24px;
+  font-weight: normal;
+  color: #999;
+  display: block;
+  letter-spacing: 0;
+  line-height: 1.4em;
+  padding: 10px 0 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+/* line 23, ../assets/scss/timeline.scss */
+.tl .navigation {
+  position: relative;
+  padding: 0;
+  text-align: center;
+  margin: 20px auto;
+  padding: 30px 0 10px;
+  overflow: hidden;
+  height: 60px;
+}
+/* line 24, ../assets/scss/timeline.scss */
+.tl .navigation ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: absolute;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+/* line 25, ../assets/scss/timeline.scss */
+.tl .navigation li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  float: left;
+}
+/* line 26, ../assets/scss/timeline.scss */
+.tl .navigation li label {
+  position: absolute;
+  bottom: 32px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #666;
+  width: 200px;
+  text-align: left;
+  left: 0;
+}
+/* line 27, ../assets/scss/timeline.scss */
+.tl .navigation li.break a:before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 2px;
+  height: 30px;
+  top: -4px;
+  background: #999;
+  left: -13px;
+}
+/* line 28, ../assets/scss/timeline.scss */
+.tl .navigation li.ad {
+  display: none;
+}
+/* line 29, ../assets/scss/timeline.scss */
+.tl .navigation .backLine {
+  height: 2px;
+  background-color: #999;
+  display: inline-block;
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 10px;
+  z-index: 0;
+  margin: 0 auto;
+}
+/* line 30, ../assets/scss/timeline.scss */
+.tl .navigation .dateDot {
+  width: 25px;
+  height: 25px;
+  background-color: #666;
+  display: inline-block;
+  border-radius: 50%;
+  border: solid #eee 2px;
+  z-index: 2;
+  position: relative;
+  margin: -2px 10px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+/* line 31, ../assets/scss/timeline.scss */
+.tl .navigation .dateDot.active, .tl .navigation .dateDot.alt.active {
+  background-color: #9d0505;
+  pointer-events: none;
+}
+/* line 32, ../assets/scss/timeline.scss */
+.tl .navigation .dateDot.alt {
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  background: #999;
+}
+/* line 33, ../assets/scss/timeline.scss */
+.tl .navigation .dateDot:hover, .tl .navigation .dateDot.alt:hover {
+  background-color: #333;
+}
+/* line 39, ../assets/scss/timeline.scss */
+.tl .buttons a {
+  background: #ddd;
+  bottom: 200px;
+  color: #666;
+  display: block;
+  font-size: 22px;
+  height: 100px;
+  opacity: 0.7;
+  overflow: hidden;
+  padding: 40px 0;
+  position: absolute;
+  width: 40px;
+  z-index: 1;
+  line-height: 0;
+}
+/* line 40, ../assets/scss/timeline.scss */
+.tl .buttons a:hover {
+  opacity: .9;
+  cursor: pointer;
+}
+/* line 41, ../assets/scss/timeline.scss */
+.tl .buttons a.prev {
+  left: 0;
+}
+/* line 41, ../assets/scss/timeline.scss */
+.tl .buttons a.prev.hide {
+  display: none;
+}
+/* line 42, ../assets/scss/timeline.scss */
+.tl .buttons a.next {
+  right: 0;
+}
+/* line 42, ../assets/scss/timeline.scss */
+.tl .buttons a.next.hide {
+  display: none;
+}
+/* line 46, ../assets/scss/timeline.scss */
+.tl .timeline {
+  overflow: hidden;
+  width: 100%;
+}
+/* line 47, ../assets/scss/timeline.scss */
+.tl .timeline .wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 48, ../assets/scss/timeline.scss */
+.tl .timeline section {
+  display: block;
+  float: left;
+  font-family: 'open sans';
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+  height: 400px;
+  width: 300px;
+  margin: 10px;
+  text-align: left;
+  padding: 0;
+  border-top: 10px solid #fff;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+/* line 49, ../assets/scss/timeline.scss */
+.tl .timeline section.active {
+  border-top: 10px solid #9d0505;
+}
+/* line 50, ../assets/scss/timeline.scss */
+.tl .timeline section h2.date {
+  font-size: 24px;
+  line-height: 1.2em;
+  margin: 0 0 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 15px 10px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: normal;
+}
+/* line 51, ../assets/scss/timeline.scss */
+.tl .timeline section h2.date strong {
+  font-size: 60px;
+  float: left;
+  margin: 0 10px 10px 0;
+  line-height: 55px;
+  letter-spacing: -.03em;
+  color: #9d0505;
+}
+/* line 52, ../assets/scss/timeline.scss */
+.tl .timeline section h2.date span {
+  display: block;
+}
+/* line 53, ../assets/scss/timeline.scss */
+.tl .timeline section h2.date .time {
+  font-size: 26px;
+  margin: 10px 0;
+  color: #9d0505;
+}
+/* line 54, ../assets/scss/timeline.scss */
+.tl .timeline section h2.date.both span {
+  display: inline-block;
+}
+/* line 55, ../assets/scss/timeline.scss */
+.tl .timeline section h2.date.both span.time {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0;
+}
+/* line 57, ../assets/scss/timeline.scss */
+.tl .timeline section .scrollArea {
+  overflow: auto;
+  margin-top: 75px;
+  height: 315px;
+  padding: 0 5px 0 15px;
+}
+/* line 58, ../assets/scss/timeline.scss */
+.tl .timeline section .link {
+  color: #000;
+  font-weight: bold;
+  text-decoration: underline;
+}
+/* line 59, ../assets/scss/timeline.scss */
+.tl .timeline section .link .fa {
+  background: #9d0505;
+  color: #fff;
+  margin: 0 5px;
+  padding: 6px;
+}
+/* line 60, ../assets/scss/timeline.scss */
+.tl .timeline section .credit {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+  line-height: 1.5em;
+}
+/* line 61, ../assets/scss/timeline.scss */
+.tl .timeline section h3 {
+  font-size: 30px;
+  margin: 6px 0 0;
+  line-height: 32px;
+}
+/* line 62, ../assets/scss/timeline.scss */
+.tl .timeline section h4 {
+  font-size: 18px;
+  margin: 20px 0 0px;
+  padding: 0;
+  line-height: 1.2;
+  color: #999;
+}
+/* line 63, ../assets/scss/timeline.scss */
+.tl .timeline section p {
+  margin: 6px 0;
+  line-height: 1.8em;
+}
+/* line 64, ../assets/scss/timeline.scss */
+.tl .timeline section img {
+  width: 100%;
+}
+/* line 65, ../assets/scss/timeline.scss */
+.tl .timeline section.advert {
+  background: none;
+  border: none;
+}
+/* line 66, ../assets/scss/timeline.scss */
+.tl .timeline section .ad {
+  margin: 75px 0;
+  padding: 0;
+  width: 300px;
+  background: none;
+}
+
+@media (max-width: 480px) {
+  /* line 73, ../assets/scss/timeline.scss */
+  .tl .title {
+    font-size: 40px;
+    line-height: 42px;
+  }
+  /* line 74, ../assets/scss/timeline.scss */
+  .tl .title span {
+    font-size: 20px;
+  }
+  /* line 76, ../assets/scss/timeline.scss */
+  .tl .desc {
+    margin: 5px 15px;
+  }
+}

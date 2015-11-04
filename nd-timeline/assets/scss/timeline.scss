@@ -1,0 +1,78 @@
+/* 
+    TIMELINE STYLES
+    Created    :10/13/15
+    Author     :ac
+*/
+
+/* MIXINS */ 
+@mixin transitionAll($secs) {
+    -webkit-transition:all $secs ease;
+    -moz-transition:all $secs ease;
+    -o-transition:all $secs ease;
+    transition:all $secs ease;
+}
+
+/* MAIN -----*/
+.tl{background:#eee;padding:20px 10px;text-align:center;overflow-x:visible;overflow-y:hidden;position:relative;width:100%; 
+    .desc {font-size:16px;max-width: 1000px;margin: 10px auto;line-height:1.8em;}
+    .title {text-transform:uppercase;font-size: 60px;line-height: 58px;
+        span {font-size:24px;font-weight:normal;color:#999;display:block;letter-spacing:0;line-height:1.4em;padding:10px 0 0;max-width: 900px;margin: 0 auto;}
+    }
+
+    /* NAV -----*/
+    .navigation {position:relative;padding:0;text-align:center;margin:20px auto;padding:30px 0 10px;overflow:hidden;height:60px;
+                 ul {padding:0;margin:0;list-style:none;position: absolute;@include transitionAll(.5s);}
+                 li {padding:0;margin:0;list-style:none;float:left;}
+                 li label {position:absolute;bottom:32px;font-size:14px;text-transform:uppercase;color:#666;width:200px;text-align:left;left:0;}
+                 li.break a:before {position:absolute;display:block;content:'';width: 2px;height: 30px;top: -4px;background: #999;left: -13px;}
+                 .ad {display:none;}
+                 .backLine {height:2px;background-color:#999;display:inline-block;position:absolute;left:12px;right:12px;top:10px;z-index:0;margin:0 auto;}
+                 .dateDot {width:25px;height:25px;background-color:#666;display:inline-block;border-radius:50%;border:solid #eee 2px;z-index:2;position:relative;margin:-2px 10px;@include transitionAll(.5s);
+                           &.active, &.alt.active {background-color:#9d0505;pointer-events:none;}
+                           &.alt {width:20px;height:20px;margin-top:1px;background:#999;}
+                           &:hover, &.alt:hover {background-color:#333;}
+                 } 
+    }
+
+    /* BUTTONS -----*/
+    .buttons {
+        a {bottom:200px;position:absolute;display:block;background:#ddd;width:40px;height:60px;overflow:hidden;padding:20px 0;color:#666;font-size:22px;opacity:.7;z-index:1;
+           &:hover {opacity:.9;cursor:pointer;}
+           &.prev {left:0;&.hide {display:none;}}
+           &.next {right:0;&.hide {display:none;}}
+        }
+    } 
+    /* TIMELINE -----*/
+    .timeline  {overflow:hidden;width:100%;
+                .wrapper{width:100%;overflow:hidden;}
+                section {display:block;float:left;font-family:'open sans';overflow:hidden;position:relative;background-color:#fff;height:400px;width:300px;margin:10px;text-align:left;padding:0;border-top:10px solid #fff;@include transitionAll(.5s);
+                         &.active {border-top:10px solid #9d0505;}
+                         h2.date {font-size:24px;line-height:1.2em;margin:0 0 10px;position:absolute;top:0;left:0;padding:10px 15px 10px;width:100%;cursor:pointer;
+                                strong {font-size:60px;float:left;margin:0 10px 10px 0;line-height:55px;letter-spacing:-.03em;color:#9d0505;}
+                                span {display:block;}
+                                .time {font-size:26px;margin:10px 0;color:#9d0505;}
+                                &.both span {display:inline-block;}
+                                &.both span.time {font-size:20px;font-weight:normal;margin:0;}
+                         }
+                         .scrollArea {overflow:auto;margin-top:75px;height:315px;padding:0 5px 0 15px;}
+                         .link {color: #000;font-weight: bold;text-decoration: underline;}
+                         .link .fa {background:#9d0505;color:#fff;margin:0 5px;padding:6px;}
+                         .caption {font-size:16px;font-weight:300;color:#999;margin:0;}
+                         h3 {font-size:30px;margin:6px 0 0;line-height:32px;}
+                         h4 {font-size:13px;margin:0 0 15px;padding:0;line-height:1.2;color:#999;}
+                         p {margin:6px 0;}
+                         img {width:100%;}
+                         &.advert {background:none;border:none;}
+                         .ad{margin:75px 0;padding:0;width:300px;background:none;}
+                }
+    }
+}
+
+@media (max-width: 480px){
+    .tl{
+        .title {font-size:40px;line-height:42px;
+            span {font-size:20px;}
+        }
+        .desc {margin:5px 15px;}
+    }
+}
